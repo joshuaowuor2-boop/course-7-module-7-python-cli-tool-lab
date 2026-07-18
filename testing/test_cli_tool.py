@@ -14,7 +14,7 @@ def test_complete_task_with_script(tmp_path):
     script_path = tmp_path / "script.py"
     script_content = f"""
 import sys
-sys.path.insert(0, '{os.getcwd().replace("\\\\", "/")}')
+sys.path.insert(0, '{os.getcwd().replace(os.sep, "/")}')
 
 from lib.models import Task, User
 
